@@ -8,6 +8,10 @@ import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+/**
+ * @author renquan
+ */
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private EditText mMessage;
@@ -54,7 +58,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (v.getId()) {
             case R.id.open:
                 // TODO 20/12/28
-                serialPortUtils.openSerialPort("/dev/ttyS9");
+                serialPortUtils.openSerialPort("/dev/ttyS9",9600);
                 break;
             case R.id.send:
                 // TODO 20/12/28

@@ -1,5 +1,9 @@
 package com.demo.serialport;
 
+/**
+ * @author renquan
+ */
+
 public class ChangeTool {
 
     /**

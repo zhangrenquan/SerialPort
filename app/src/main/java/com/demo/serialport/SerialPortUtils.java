@@ -8,14 +8,14 @@ import java.io.OutputStream;
 import android_serialport_api.SerialPort;
 
 /**
- * Created by WangChaowei on 2017/12/7.
+ * @author renquan
  */
 
 public class SerialPortUtils {
 
     private final String TAG = "SerialPortUtils";
 //    private String path = "/dev/ttyS1";
-    private int baudrate = 9600;
+//    private int baudrate = 9600;
     public boolean serialPortStatus = false; //是否打开串口标志
     public String data_;
     public boolean threadStatus; //线程状态，为了安全终止线程
@@ -30,7 +30,7 @@ public class SerialPortUtils {
      * 打开串口
      * @return serialPort串口对象
      */
-    public SerialPort openSerialPort(String path){
+    public SerialPort openSerialPort(String path,int baudrate){
         try {
             serialPort = new SerialPort(new File(path),baudrate,0);
             this.serialPortStatus = true;
@@ -118,7 +118,7 @@ public class SerialPortUtils {
         }
     }
 
-    //这是写了一监听器来监听接收数据
+    //数据回调
     public OnDataReceiveListener onDataReceiveListener = null;
     public static interface OnDataReceiveListener {
         public void onDataReceive(byte[] buffer, int size);
